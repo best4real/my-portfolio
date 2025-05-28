@@ -17,6 +17,7 @@ body {
   padding: 20px 40px;
   background: #fff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -29,6 +30,7 @@ nav ul {
   gap: 30px;
   list-style: none;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 nav ul li a {
@@ -56,6 +58,8 @@ nav ul li a {
   justify-content: space-between;
   align-items: center;
   padding: 60px 40px;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .hero-text {
@@ -82,6 +86,7 @@ nav ul li a {
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
+  display: inline-block;
 }
 
 .hero-img img {
@@ -104,16 +109,17 @@ nav ul li a {
 }
 
 .socials a .fa-whatsapp {
-  color: #25D366; /* WhatsApp green */
+  color: #25D366;
 }
 
 .socials a .fa-instagram {
-  color: #E1306C; /* Instagram pink */
+  color: #E1306C;
 }
 
 .socials a .fa-envelope {
-  color: #D44638; /* Gmail red */
+  color: #D44638;
 }
+
 .services {
   padding: 60px 20px;
   background-color: #f9f9f9;
@@ -137,7 +143,7 @@ nav ul li a {
   background: white;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   max-width: 280px;
   transition: transform 0.3s ease;
 }
@@ -155,6 +161,7 @@ nav ul li a {
   color: #555;
   font-size: 15px;
 }
+
 .projects {
   padding: 60px 20px;
   background-color: #fff;
@@ -179,7 +186,7 @@ nav ul li a {
   padding: 20px;
   border-radius: 12px;
   max-width: 300px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
 }
 
@@ -203,24 +210,7 @@ nav ul li a {
   font-size: 14px;
   color: #555;
 }
-.contact {
-  background-color: #f9f9f9;
-  padding: 60px 20px;
-  text-align: center;
-}
 
-.contact h2 {
-  font-size: 32px;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.contact p {
-  margin-bottom: 40px;
-  color: #666;
-}
-
-/* Contact Section */
 .contact {
   background-color: #f9f9f9;
   padding: 60px 20px;
@@ -230,6 +220,11 @@ nav ul li a {
 .contact h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
+}
+
+.contact p {
+  margin-bottom: 40px;
+  color: #666;
 }
 
 form {
@@ -258,22 +253,6 @@ form textarea:focus {
   outline: none;
 }
 
-.btn {
-  background-color: #007bff;
-  color: white;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #0056b3;
-}
-
-/* Success Message Styling */
 .success-message {
   display: none;
   margin-top: 20px;
@@ -289,11 +268,15 @@ form textarea:focus {
   animation: fadeIn 0.5s ease;
 }
 
-/* Simple fade in effect */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
+
 .footer {
   background-color: #222;
   color: #fff;
@@ -308,70 +291,98 @@ form textarea:focus {
 }
 
 .footer-icons a.whatsapp {
-  color: #25D366; /* WhatsApp green */
+  color: #25D366;
 }
 
 .footer-icons a.instagram {
-  color: #E1306C; /* Instagram pink/red */
+  color: #E1306C;
 }
 
 .footer-icons a.email {
-  color: #D44638; /* Gmail red */
+  color: #D44638;
 }
 
 .footer-icons a:hover {
   opacity: 0.8;
 }
+
 .footer-icons a {
-  font-size: 28px; /* increased from 24px */
+  font-size: 28px;
   margin: 0 15px;
   transition: color 0.3s, transform 0.2s;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 /* === Mobile Responsiveness === */
 @media (max-width: 768px) {
   body {
-    padding: 10px;
     font-size: 16px;
   }
 
-  header,
-  nav,
-  section,
-  footer {
-    padding: 10px;
-    text-align: center;
-  }
-
-  nav {
-    display: flex;
+  .navbar {
     flex-direction: column;
-    gap: 10px;
+    align-items: flex-start;
+    padding: 20px;
   }
 
-  .container, 
-  .about, 
-  .projects, 
-  .contact-form {
-    width: 100% !important;
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    padding: 0;
+    margin-top: 20px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-text h2 {
+    font-size: 36px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+
+  .hero-img img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .service-cards,
+  .project-cards {
     flex-direction: column;
     align-items: center;
+  }
+
+  .btn {
+    width: 100%;
     text-align: center;
+    padding: 12px;
+    border-radius: 30px;
   }
 
-  .contact-form input,
-  .contact-form textarea,
-  button {
-    width: 100% !important;
-    max-width: 400px;
-    box-sizing: border-box;
-    margin: 10px 0;
+  .socials a {
+    font-size: 28px;
+    margin: 0 10px;
   }
 
-  img {
-    max-width: 100%;
-    height: auto;
+  .contact form {
+    padding: 0 10px;
+  }
+
+  .footer-icons a {
+    font-size: 24px;
+    margin: 0 10px;
   }
 }
