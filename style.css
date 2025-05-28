@@ -60,33 +60,29 @@ nav a:hover {
 /* Hero Section */
 .hero {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: row; /* Force side-by-side layout */
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
-  padding: 2rem 1rem;
+  text-align: left;
+  padding: 2rem;
+  flex-wrap: wrap; /* Prevent overflow */
 }
 
 .hero-text {
-  max-width: 600px;
+  flex: 1;
+  padding-right: 1rem;
+  min-width: 250px;
 }
 
-.hero h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.hero h2 span {
-  color: #f04;
-}
-
-.hero p {
-  margin-bottom: 1rem;
+.hero-img {
+  flex: 1;
+  text-align: center;
 }
 
 .hero-img img {
   max-width: 250px;
+  width: 100%;
   border-radius: 12px;
-  margin-top: 1.5rem;
 }
 
 .btn {
@@ -111,9 +107,9 @@ nav a:hover {
 .service-cards,
 .project-cards {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* always at least 2 cards per row if possible */
   gap: 2rem;
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 
 .service-card,
@@ -245,8 +241,3 @@ button {
   }
 }
 
-@media (min-width: 1024px) {
-  .project-cards {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
